@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemaacademico.controller.FXMLTelaMedicoController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="600.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="250.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#1e5799" />
+                        <Stop color="#2989d8" offset="0.5" />
+                        <Stop color="#70b9e8" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <ImageView fx:id="imgvUser" fitHeight="60.0" fitWidth="60.0" layoutX="95.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblmatricula" alignment="CENTER" layoutX="2.0" layoutY="120.0" prefHeight="16.0" prefWidth="250.0" text="Usuário" textFill="WHITE" visible="false" />
+            <Label fx:id="lblNome" alignment="CENTER" layoutY="143.0" prefHeight="16.0" prefWidth="250.0" text="Médico" textFill="WHITE" />
+            <GridPane layoutX="31.0" layoutY="215.0" prefHeight="201.0" prefWidth="188.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="50.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="50.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="0.666656494140625" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" onAction="#abrirSecaoLIstar" prefHeight="26.0" prefWidth="236.0" style="-fx-border-color: #ffffff;" text="CONSULTAS" textFill="WHITE">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" onAction="#abrirSecaoReceita" prefHeight="26.0" prefWidth="304.0" style="-fx-border-color: #ffffff;" text="RECEITA" textFill="WHITE" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" onAction="#sair" prefHeight="26.0" prefWidth="304.0" style="-fx-border-color: #ffffff; -fx-background-color: #e24848;" text="SAIR" textFill="WHITE" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </JFXButton>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/criar.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../images/editar.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../images/sair.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <Pane fx:id="paneConsultas" layoutX="260.0" layoutY="10.0" prefHeight="600.0" prefWidth="550.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="45.0" prefHeight="35.0" prefWidth="550.0" text="CONSULTAS">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <JFXRadioButton fx:id="rbtnConsAgendadas" focusTraversable="false" layoutX="130.0" layoutY="108.0" onAction="#abreGridConsAgendadaLista" selected="true" style="-jfx-selected-color: #70b9e8;" text="Consultas Agendadas">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="listagem" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton focusTraversable="false" layoutX="282.0" layoutY="109.0" onAction="#abreGridHistoricoConsLista" style="-jfx-selected-color: #70b9e8;" text="Histórico de Consultas" toggleGroup="$listagem" />
+                  <GridPane fx:id="gridListaConsAgendadas" layoutX="39.0" layoutY="141.0" prefHeight="450.0" prefWidth="479.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="164.99999237060547" minHeight="1.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="363.0" minHeight="10.0" prefHeight="341.3333740234375" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="342.6666564941406" minHeight="10.0" prefHeight="54.6666259765625" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="contadorConsAgendadas" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="24.0" prefWidth="478.0" text="0">
+                           <GridPane.margin>
+                              <Insets right="3.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Consultas Agendadas">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <JFXListView fx:id="lvConsAgendadas" prefHeight="330.0" prefWidth="479.0" GridPane.rowIndex="1" />
+                        <JFXButton focusTraversable="false" onAction="#verConsAgendadas" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #2980d8;" text="Ver" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="gridListaHistoricoCons" layoutX="39.0" layoutY="141.0" prefHeight="450.0" prefWidth="479.0" visible="false">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="164.99999237060547" minHeight="1.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="363.0" minHeight="10.0" prefHeight="341.3333740234375" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="342.6666564941406" minHeight="10.0" prefHeight="54.6666259765625" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="contadorHistoricoCons" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="24.0" prefWidth="478.0" text="0">
+                           <GridPane.margin>
+                              <Insets right="3.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Histórico de Consultas">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <JFXListView fx:id="lvHistoricoCons" prefHeight="330.0" prefWidth="479.0" GridPane.rowIndex="1" />
+                        <JFXButton focusTraversable="false" onAction="#verHistoricoConsLista" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #2980d8;" text="Ver" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Pane fx:id="paneReceita" layoutX="250.0" prefHeight="600.0" prefWidth="550.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="45.0" prefHeight="35.0" prefWidth="550.0" text="RECEITA">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <GridPane fx:id="gridListaConsAgendadas1" layoutX="39.0" layoutY="175.0" prefHeight="416.0" prefWidth="479.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="33.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="382.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="382.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="382.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="382.0" minHeight="10.0" prefHeight="135.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="342.6666564941406" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <JFXButton fx:id="btnSalvar" focusTraversable="false" onAction="#salvarReceita" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: #2980d8;" text="Salvar" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                        <JFXButton fx:id="btnImprimir" focusTraversable="false" onAction="#impReceita" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: #e24848;" text="Imprimir" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="88.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <Label text="Diagnóstico" GridPane.rowIndex="3" />
+                        <Label text="Prescrição:" />
+                        <JFXTextArea fx:id="txtPrescricao" prefHeight="120.0" prefWidth="479.0" GridPane.rowIndex="2" />
+                        <JFXTextArea fx:id="txtDiagnostico" prefHeight="120.0" prefWidth="479.0" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <JFXTextField fx:id="nome_paciente" focusColor="#1e5799" labelFloat="true" layoutX="318.0" layoutY="129.0" prefHeight="25.0" prefWidth="200.0" promptText="Nome do Paciente" />
+                  <JFXTextField fx:id="id_consulta" focusColor="#1e5799" labelFloat="true" layoutX="39.0" layoutY="129.0" prefHeight="25.0" prefWidth="200.0" promptText="ID da Consulta" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Separator layoutX="9.0" layoutY="184.0" prefHeight="3.0" prefWidth="233.0" />
+      <Label fx:id="lblSaudacao" alignment="CENTER" layoutX="251.0" layoutY="123.0" prefHeight="40.0" prefWidth="550.0" text="Seja Bem-Vindo, Médico!">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imvSaudacao" fitHeight="300.0" fitWidth="300.0" layoutX="370.0" layoutY="200.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/administrador.boasvindas.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
