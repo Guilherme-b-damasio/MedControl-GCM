@@ -20,7 +20,6 @@ MedControl é um sistema de gerenciamento de consultas médicas desenvolvido em 
   <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/34a61e85-ca5f-4022-975f-99104aef357f" width="200"/>
   <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/a88821a5-ab9c-475c-a1cc-5ab29005d4b3" width="200"/>
   <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/3338914c-cd90-46c2-a06b-870025eb1d69" width="200"/>
-  <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/748f6054-d89d-47d8-b1bb-2c5894695221" width="200"/>
 </p>
 <p float="left">
   <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/f3e3e41b-f48c-49b5-863e-c2e237a3ef18" width="200"/>
@@ -30,7 +29,6 @@ MedControl é um sistema de gerenciamento de consultas médicas desenvolvido em 
 </p>
 <p float="left">
   <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/a281badd-b48a-49cf-844d-14f2d5c64010" width="200"/>
-  <img src="https://github.com/Guilherme-b-damasio/MedControl-GCM/assets/153876817/f2ddeb25-9d34-4549-b89e-e65ebc13418d" width="200"/>
 </p>
 
 ## Requisitos
