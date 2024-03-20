@@ -1,6 +1,6 @@
 # MedControl: Sistema de Gerenciamento de Consultas Médicas
 
-MedControl é um sistema de gerenciamento de consultas médicas desenvolvido em Java, utilizando JavaFX  juntamente com Mysql. Abaixo, são apresentadas capturas de tela que ilustram os diversos aspectos e funcionalidades do sistema.
+MedControl é um sistema de gerenciamento de consultas médicas desenvolvido em Java, utilizando JavaFX  juntamente com MySQL. Abaixo, são apresentadas capturas de tela que ilustram os diversos aspectos e funcionalidades do sistema.
 
 ## Capturas de Tela do Sistema
 
@@ -34,8 +34,8 @@ MedControl é um sistema de gerenciamento de consultas médicas desenvolvido em 
 ## Requisitos
 - Necessário ter Java JDK 1.8.
 - Necessário adicionar o mysql-connector-j-8.2.0.jar as libraries do projeto.
-- Banco de dados em Mysl
-- Para Configurar as telas, utilize scenebuilder.
+- Banco de dados em MySQL
+- Para Configurar as telas, utilize Scene Builder.
 
 ## Configuração
 - Configurar a conexão com banco de dados
